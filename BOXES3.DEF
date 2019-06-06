@@ -1,0 +1,13 @@
+;-----------------------------------
+; BOXES3.DEF module definition file
+;-----------------------------------
+
+NAME           BOXES3
+DESCRIPTION    'Draws boxes in client window (c) 1988, Ziff Communcations Co.'
+PROTMODE
+HEAPSIZE       1024
+STACKSIZE      8192
+EXPORTS        ClientWndProc
+               AboutDlgProc
+               NumIncDlgProc
+

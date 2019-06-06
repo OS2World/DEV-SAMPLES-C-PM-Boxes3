@@ -1,0 +1,14 @@
+#------------------
+# BOXES3 make file
+#------------------
+
+boxes3.obj : boxes3.c boxes3.h
+     cl -c -G2sw -W3 -Zp boxes3.c
+
+boxes3.res : boxes3.rc boxes3.h
+     rc -r boxes3
+
+boxes3.exe : boxes3.obj boxes3.def boxes3.res
+     link boxes3, /align:16, NUL, os2, boxes3
+     rc boxes3.res
+

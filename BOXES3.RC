@@ -1,0 +1,81 @@
+/*--------------------------------
+   BOXES3.RC resource script file
+  --------------------------------*/
+
+#include <os2.h>
+#include "boxes3.h"
+
+MENU ID_MAINMENU
+   {
+   SUBMENU "~Options",                       -1
+      {
+      MENUITEM "~Number and Increment...",   IDM_NUMINC
+      MENUITEM SEPARATOR
+      MENUITEM "A~bout Boxes3...",           IDM_ABOUT
+      MENUITEM "E~xit",                      SC_CLOSE,      MIS_SYSCOMMAND
+      }
+   SUBMENU "~Background",                    -1
+      {
+      MENUITEM "~Black",                     IDM_BACKGROUND + 0
+      MENUITEM "B~lue",                      IDM_BACKGROUND + 1
+      MENUITEM "~Red",                       IDM_BACKGROUND + 2
+      MENUITEM "~Pink",                      IDM_BACKGROUND + 3
+      MENUITEM "~Green",                     IDM_BACKGROUND + 4
+      MENUITEM "~Cyan",                      IDM_BACKGROUND + 5
+      MENUITEM "~Yellow",                    IDM_BACKGROUND + 6
+      MENUITEM "~White",                     IDM_BACKGROUND + 7,  MIA_CHECKED
+      MENUITEM "Dark Gray",                  IDM_BACKGROUND + 8,  MIS_BREAK
+      MENUITEM "Dark Blue",                  IDM_BACKGROUND + 9
+      MENUITEM "Dark Red",                   IDM_BACKGROUND + 10
+      MENUITEM "Dark Pink",                  IDM_BACKGROUND + 11
+      MENUITEM "Dark Green",                 IDM_BACKGROUND + 12
+      MENUITEM "Dark Cyan",                  IDM_BACKGROUND + 13
+      MENUITEM "Brown",                      IDM_BACKGROUND + 14
+      MENUITEM "Light Gray",                 IDM_BACKGROUND + 15
+      }
+   SUBMENU "~Foreground",                    -1
+      {
+      MENUITEM "~Black",                     IDM_FOREGROUND + 0,  MIA_CHECKED
+      MENUITEM "B~lue",                      IDM_FOREGROUND + 1
+      MENUITEM "~Red",                       IDM_FOREGROUND + 2
+      MENUITEM "~Pink",                      IDM_FOREGROUND + 3
+      MENUITEM "~Green",                     IDM_FOREGROUND + 4
+      MENUITEM "~Cyan",                      IDM_FOREGROUND + 5
+      MENUITEM "~Yellow",                    IDM_FOREGROUND + 6
+      MENUITEM "~White",                     IDM_FOREGROUND + 7
+      MENUITEM "Dark Gray",                  IDM_FOREGROUND + 8,  MIS_BREAK
+      MENUITEM "Dark Blue",                  IDM_FOREGROUND + 9
+      MENUITEM "Dark Red",                   IDM_FOREGROUND + 10
+      MENUITEM "Dark Pink",                  IDM_FOREGROUND + 11
+      MENUITEM "Dark Green",                 IDM_FOREGROUND + 12
+      MENUITEM "Dark Cyan",                  IDM_FOREGROUND + 13
+      MENUITEM "Brown",                      IDM_FOREGROUND + 14
+      MENUITEM "Light Gray",                 IDM_FOREGROUND + 15
+      }
+   }
+
+DLGTEMPLATE IDD_ABOUTBOX
+   {
+   DIALOG "", -1, 10, 100, 160, 96, WS_SAVEBITS | FS_DLGBORDER
+      {
+      CTEXT "BOXES3"                            -1, 10, 74, 140, 10
+      CTEXT "Presentation Manager Demo"         -1, 10, 54, 140, 10
+      CTEXT "PC Magazine * Charles Petzold"     -1, 10, 42, 140, 10
+      CTEXT "(c) 1988, Ziff Communications Co." -1, 10, 30, 140, 10
+      DEFPUSHBUTTON "OK"                    DID_OK, 64,  8,  32, 14, WS_GROUP
+      }
+   }
+
+DLGTEMPLATE IDD_NUMINCBOX
+   {
+   DIALOG "", -1, 10, 100, 124, 86, WS_SAVEBITS | FS_DLGBORDER
+      {
+      CTEXT    "BOXES3 Drawing Options"        -1,  10, 66, 106, 10
+      LTEXT    "Number of Boxes:"              -1,  12, 46,  80, 10
+      EDITTEXT ""                    IDD_NUMBOXES, 100, 46,  12, 10, ES_MARGIN
+      LTEXT    "Increment Divisor:"            -1,  12, 30,  80, 10 
+      EDITTEXT ""                   IDD_INCREMENT, 100, 30,  12, 10, ES_MARGIN
+      DEFPUSHBUTTON "OK"                   DID_OK,  10,  8,  48, 14, WS_GROUP
+      PUSHBUTTON    "Esc=Cancel"       DID_CANCEL,  66,  8,  48, 14, WS_GROUP
+      }
+   }
