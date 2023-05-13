@@ -11,7 +11,7 @@ COMPILE TOOLS
  
 AUTHORS
 ===============
-* 
+* Charles Petzold
 
 LINKS
 ===============
